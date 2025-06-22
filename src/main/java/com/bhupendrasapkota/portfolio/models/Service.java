@@ -1,28 +1,28 @@
 package com.bhupendrasapkota.portfolio.models;
 
-import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-public class Skill {
+public class Service {
     private int id;
     private String name;
-    private String category;
-    private int proficiencyLevel;
-    private BigDecimal yearsOfExperience;
+    private String description;
+    private String shortDescription;
+    private String priceRange;
+    private String duration;
     private String iconName;
-    private String color;
     private boolean isFeatured;
+    private boolean isActive;
     private int displayOrder;
     private LocalDateTime createdAt;
 
     // Default constructor
-    public Skill() {}
+    public Service() {}
 
     // Constructor with essential fields
-    public Skill(String name, String category, int proficiencyLevel) {
+    public Service(String name, String description) {
         this.name = name;
-        this.category = category;
-        this.proficiencyLevel = proficiencyLevel;
+        this.description = description;
+        this.isActive = true;
     }
 
     // Getters and Setters
@@ -32,23 +32,26 @@ public class Skill {
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }
 
-    public String getCategory() { return category; }
-    public void setCategory(String category) { this.category = category; }
+    public String getDescription() { return description; }
+    public void setDescription(String description) { this.description = description; }
 
-    public int getProficiencyLevel() { return proficiencyLevel; }
-    public void setProficiencyLevel(int proficiencyLevel) { this.proficiencyLevel = proficiencyLevel; }
+    public String getShortDescription() { return shortDescription; }
+    public void setShortDescription(String shortDescription) { this.shortDescription = shortDescription; }
 
-    public BigDecimal getYearsOfExperience() { return yearsOfExperience; }
-    public void setYearsOfExperience(BigDecimal yearsOfExperience) { this.yearsOfExperience = yearsOfExperience; }
+    public String getPriceRange() { return priceRange; }
+    public void setPriceRange(String priceRange) { this.priceRange = priceRange; }
+
+    public String getDuration() { return duration; }
+    public void setDuration(String duration) { this.duration = duration; }
 
     public String getIconName() { return iconName; }
     public void setIconName(String iconName) { this.iconName = iconName; }
 
-    public String getColor() { return color; }
-    public void setColor(String color) { this.color = color; }
-
     public boolean isFeatured() { return isFeatured; }
     public void setFeatured(boolean featured) { isFeatured = featured; }
+
+    public boolean isActive() { return isActive; }
+    public void setActive(boolean active) { isActive = active; }
 
     public int getDisplayOrder() { return displayOrder; }
     public void setDisplayOrder(int displayOrder) { this.displayOrder = displayOrder; }
@@ -58,11 +61,11 @@ public class Skill {
 
     @Override
     public String toString() {
-        return "Skill{" +
+        return "Service{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", category='" + category + '\'' +
-                ", proficiencyLevel=" + proficiencyLevel +
+                ", isActive=" + isActive +
+                ", isFeatured=" + isFeatured +
                 '}';
     }
 }
