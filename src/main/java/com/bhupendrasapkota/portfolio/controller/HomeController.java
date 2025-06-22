@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.logging.Logger;
 import java.util.logging.Level;
 
-@WebServlet({"", "/", "/home"})
+@WebServlet({"/home"})
 public class HomeController extends HttpServlet {
     
     private static final Logger logger = Logger.getLogger(HomeController.class.getName());
@@ -24,6 +24,8 @@ public class HomeController extends HttpServlet {
     private TestimonialDAO testimonialDAO;
     private ServiceDAO serviceDAO;
     private SocialLinkDAO socialLinkDAO;
+    private BlogPostDAO blogPostDAO;
+    private WorkExperienceDAO workExperienceDAO;
     
     @Override
     public void init() throws ServletException {
@@ -34,6 +36,8 @@ public class HomeController extends HttpServlet {
         testimonialDAO = new TestimonialDAO();
         serviceDAO = new ServiceDAO();
         socialLinkDAO = new SocialLinkDAO();
+        blogPostDAO = new BlogPostDAO();
+        workExperienceDAO = new WorkExperienceDAO();
     }
     
     @Override
@@ -76,6 +80,20 @@ public class HomeController extends HttpServlet {
             // Get social links
             List<SocialLink> socialLinks = socialLinkDAO.findActive();
             request.setAttribute("socialLinks", socialLinks);
+            
+            // Get latest blog posts (limit 4)
+            List<BlogPost> latestBlogPosts = blogPostDAO.findPublished();
+            if (latestBlogPosts.size() > 4) {
+                latestBlogPosts = latestBlogPosts.subList(0, 4);
+            }
+            request.setAttribute("latestBlogPosts", latestBlogPosts);
+            
+            // Get work experiences (limit 4)
+            List<WorkExperience> workExperiences = workExperienceDAO.findAll();
+            if (workExperiences.size() > 4) {
+                workExperiences = workExperiences.subList(0, 4);
+            }
+            request.setAttribute("workExperiences", workExperiences);
             
             // Forward to home page
             request.getRequestDispatcher("/WEB-INF/views/home.jsp").forward(request, response);

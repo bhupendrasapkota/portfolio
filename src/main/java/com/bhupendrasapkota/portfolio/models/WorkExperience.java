@@ -2,6 +2,7 @@ package com.bhupendrasapkota.portfolio.models;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 public class WorkExperience {
@@ -74,6 +75,18 @@ public class WorkExperience {
 
     public List<WorkAchievement> getAchievements() { return achievements; }
     public void setAchievements(List<WorkAchievement> achievements) { this.achievements = achievements; }
+
+    public String getStartYear() {
+        return startDate != null ? startDate.format(DateTimeFormatter.ofPattern("yyyy")) : "";
+    }
+    public String getEndYear() {
+        if (endDate != null) {
+            return endDate.format(DateTimeFormatter.ofPattern("yyyy"));
+        } else if (isCurrent) {
+            return "Present";
+        }
+        return "";
+    }
 
     @Override
     public String toString() {

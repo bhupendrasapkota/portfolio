@@ -17,7 +17,7 @@ import java.util.logging.Level;
 public class ProjectController extends HttpServlet {
 
     private static final Logger logger = Logger.getLogger(ProjectController.class.getName());
-    
+
     private ProjectDAO projectDAO;
     private ProjectImageDAO projectImageDAO;
     private ProjectTechnologyDAO projectTechnologyDAO;
