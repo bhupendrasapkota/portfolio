@@ -1,0 +1,21 @@
+# Application Configuration Template
+# Copy this file to application.properties and update with your actual values
+
+# Admin Settings
+# IMPORTANT: Change this secret code for production!
+admin.secret.code=your-secure-secret-code-here
+
+# Session Settings
+session.timeout.hours=24
+
+# Security Settings
+security.csrf.enabled=true
+security.xss.protection=true
+
+# Logging Settings
+logging.level=INFO
+logging.file=portfolio.log
+
+# Feature Flags
+feature.analytics.enabled=true
+feature.admin.enabled=true 

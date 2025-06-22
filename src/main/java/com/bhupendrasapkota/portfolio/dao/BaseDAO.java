@@ -3,9 +3,13 @@ package com.bhupendrasapkota.portfolio.dao;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.logging.Logger;
+import java.util.logging.Level;
 import com.bhupendrasapkota.portfolio.util.DatabaseConfig;
 
 public abstract class BaseDAO {
+    private static final Logger logger = Logger.getLogger(BaseDAO.class.getName());
+    
     static {
         try {
             Class.forName(DatabaseConfig.getDriver());
@@ -27,7 +31,7 @@ public abstract class BaseDAO {
             try {
                 connection.close();
             } catch (SQLException e) {
-                System.err.println("Error closing connection: " + e.getMessage());
+                logger.log(Level.WARNING, "Error closing connection: " + e.getMessage(), e);
             }
         }
     }

@@ -126,6 +126,25 @@ public class ProjectDAO extends BaseDAO {
         return projects;
     }
 
+    public List<String> findProjectTypes() {
+        String sql = "SELECT DISTINCT project_type FROM projects WHERE is_published = true AND project_type IS NOT NULL ORDER BY project_type";
+        List<String> projectTypes = new ArrayList<>();
+
+        try (Connection conn = getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            ResultSet rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                projectTypes.add(rs.getString("project_type"));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException("Error finding project types", e);
+        }
+
+        return projectTypes;
+    }
+
     public Project save(Project project) {
         if (project.getId() == 0) {
             return insert(project);
