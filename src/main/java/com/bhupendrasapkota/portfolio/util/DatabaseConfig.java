@@ -13,9 +13,9 @@ public class DatabaseConfig {
                 properties.load(input);
             } else {
                 // Default values if properties file is not found
-                properties.setProperty("db.url", "jdbc:mysql://127.0.0.1:3306/portfolio");
-                properties.setProperty("db.username", "root");
-                properties.setProperty("db.password", "idontcare");
+                properties.setProperty("db.url", "");
+                properties.setProperty("db.username", "");
+                properties.setProperty("db.password", "");
                 properties.setProperty("db.driver", "com.mysql.cj.jdbc.Driver");
             }
         } catch (IOException e) {
