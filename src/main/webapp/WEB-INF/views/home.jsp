@@ -9,10 +9,6 @@
       rel="stylesheet"
       href="${pageContext.request.contextPath}/css/base.css"
     />
-    <link
-      rel="stylesheet"
-      href="${pageContext.request.contextPath}/css/media.css"
-    />
   </head>
   <body>
     <jsp:include page="common/navbar.jsp" />

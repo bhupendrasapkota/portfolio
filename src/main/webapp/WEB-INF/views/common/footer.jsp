@@ -40,7 +40,7 @@
             >
           </li>
           <li>
-            <a href="https://www.linkedin.com/in/bhupendra0209/" target="_blank"
+            <a href="" target="https://www.linkedin.com/in/bhupendra0209/"
               >LinkedIn</a
             >
           </li>
