@@ -9,6 +9,10 @@
       rel="stylesheet"
       href="${pageContext.request.contextPath}/css/base.css"
     />
+    <link
+      rel="stylesheet"
+      href="${pageContext.request.contextPath}/css/media.css"
+    />
   </head>
   <body>
     <jsp:include page="common/navbar.jsp" />
@@ -21,5 +25,7 @@
     </main>
 
     <jsp:include page="common/footer.jsp" />
+
+    <script src="${pageContext.request.contextPath}/js/scroll-chaining.js"></script>
   </body>
 </html>
