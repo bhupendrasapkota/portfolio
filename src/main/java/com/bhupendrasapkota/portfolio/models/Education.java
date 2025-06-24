@@ -3,6 +3,8 @@ package com.bhupendrasapkota.portfolio.models;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.util.Date;
 
 public class Education {
     private int id;
@@ -63,6 +65,22 @@ public class Education {
 
     public LocalDateTime getCreatedAt() { return createdAt; }
     public void setCreatedAt(LocalDateTime createdAt) { this.createdAt = createdAt; }
+
+    // --- Converters for JSTL ---
+    public Date getStartDateAsDate() {
+        if (this.startDate == null) {
+            return null;
+        }
+        return Date.from(this.startDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
+    }
+
+    public Date getEndDateAsDate() {
+        if (this.endDate == null) {
+            return null;
+        }
+        return Date.from(this.endDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
+    }
+    // -------------------------
 
     @Override
     public String toString() {

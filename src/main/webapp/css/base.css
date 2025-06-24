@@ -1248,6 +1248,26 @@ select:focus {
   transform: scale(1.02);
 }
 
+.skill-item {
+  font-size: var(--text-lg);
+  font-weight: var(--font-medium);
+  color: var(--text-secondary);
+  background-color: var(--white);
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-full);
+  border: 1px solid var(--gray-200);
+  transition: all var(--transition-base);
+  cursor: pointer;
+}
+
+.skill-item:hover {
+  background-color: var(--white);
+  color: var(--text-primary);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-base);
+  border-color: var(--text-primary);
+}
+
 .loading {
   opacity: 0.6;
   pointer-events: none;
@@ -1410,8 +1430,8 @@ select:focus {
   background: transparent;
   list-style: none;
 
-  &:hover{
-    background:transparent;
+  &:hover {
+    background: transparent;
   }
 }
 

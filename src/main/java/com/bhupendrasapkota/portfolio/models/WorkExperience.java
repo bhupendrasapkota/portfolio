@@ -2,7 +2,9 @@ package com.bhupendrasapkota.portfolio.models;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.List;
 
 public class WorkExperience {
@@ -75,6 +77,22 @@ public class WorkExperience {
 
     public List<WorkAchievement> getAchievements() { return achievements; }
     public void setAchievements(List<WorkAchievement> achievements) { this.achievements = achievements; }
+
+    // --- Converters for JSTL ---
+    public Date getStartDateAsDate() {
+        if (this.startDate == null) {
+            return null;
+        }
+        return Date.from(this.startDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
+    }
+
+    public Date getEndDateAsDate() {
+        if (this.endDate == null) {
+            return null;
+        }
+        return Date.from(this.endDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
+    }
+    // -------------------------
 
     public String getStartYear() {
         return startDate != null ? startDate.format(DateTimeFormatter.ofPattern("yyyy")) : "";

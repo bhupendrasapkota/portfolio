@@ -54,7 +54,7 @@ prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
           <li>
             <span class="exp-title"><c:out value="${exp.position}" /></span>
             <span class="exp-company"
-              >@ <c:out value="${exp.companyName}"
+              ><c:out value="${exp.companyName}"
             /></span>
             <span class="exp-duration">
               (${exp.startYear} - ${exp.endYear})
@@ -82,7 +82,7 @@ prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
           rel="noopener"
           title="${link.platform}"
         >
-          <i class="icon-${link.platform}"></i>
+            <img src="${link.iconName}" alt="${link.platform}">
         </a>
       </c:forEach>
     </div>

@@ -2,6 +2,8 @@ package com.bhupendrasapkota.portfolio.models;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.util.Date;
 
 public class Certification {
     private int id;
@@ -59,6 +61,15 @@ public class Certification {
 
     public LocalDateTime getCreatedAt() { return createdAt; }
     public void setCreatedAt(LocalDateTime createdAt) { this.createdAt = createdAt; }
+
+    // --- Converters for JSTL ---
+    public Date getIssueDateAsDate() {
+        if (this.issueDate == null) {
+            return null;
+        }
+        return Date.from(this.issueDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
+    }
+    // -------------------------
 
     @Override
     public String toString() {

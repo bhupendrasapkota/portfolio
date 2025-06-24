@@ -32,7 +32,7 @@
       <h3 class="section-title">Skills</h3>
       <ul class="skills-list">
         <c:forEach var="skill" items="${featuredSkills}">
-          <li><c:out value="${skill.name}" /></li>
+          <li class="skill-item"><c:out value="${skill.name}" /></li>
         </c:forEach>
       </ul>
       <a
