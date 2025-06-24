@@ -41,7 +41,7 @@ prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
       href="${pageContext.request.contextPath}/services"
       class="btn btn-outline"
     >
-      More Services <span class="btn-icon">&rarr;</span>
+      More Info <span class="btn-icon">&rarr;</span>
     </a>
   </section>
 
