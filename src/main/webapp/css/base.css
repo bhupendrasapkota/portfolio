@@ -534,6 +534,7 @@ table {
   font-weight: 500;
   transition: all 0.2s ease;
   gap: 0.15em;
+  cursor: pointer;
 }
 
 .projects-list li:hover,
