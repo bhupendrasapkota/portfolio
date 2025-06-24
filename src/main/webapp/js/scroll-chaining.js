@@ -12,12 +12,22 @@ function enableScrollChaining(sideSelector, centerSelector) {
       const scrollingDown = e.deltaY > 0;
       const scrollingUp = e.deltaY < 0;
       if ((scrollingDown && atBottom) || (scrollingUp && atTop)) {
-        // Prevent side from handling the scroll, let center scroll
-        e.preventDefault();
-        center.scrollBy({
-          top: e.deltaY,
-          behavior: "auto",
-        });
+        // Check if center can scroll further
+        const centerAtTop = center.scrollTop === 0;
+        const centerAtBottom =
+          Math.ceil(center.scrollTop + center.clientHeight) >=
+          center.scrollHeight;
+        if (
+          (scrollingDown && !centerAtBottom) ||
+          (scrollingUp && !centerAtTop)
+        ) {
+          // Prevent side from handling the scroll, let center scroll
+          e.preventDefault();
+          center.scrollBy({
+            top: e.deltaY,
+            behavior: "auto",
+          });
+        } // else: let event bubble up to window for page scroll
       }
     },
     { passive: false }
