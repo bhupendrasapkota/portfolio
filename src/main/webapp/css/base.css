@@ -337,7 +337,7 @@ table {
 /* LEFT & RIGHT COLUMN LAYOUT */
 .left-column-content,
 .right-column-content {
-  padding: var(--space-6) var(--space-8);
+  padding: var(--space-10) var(--space-10);
   min-width: clamp(180px, 18vw, 220px);
   max-width: clamp(280px, 28vw, 340px);
   background: var(--bg-primary);
