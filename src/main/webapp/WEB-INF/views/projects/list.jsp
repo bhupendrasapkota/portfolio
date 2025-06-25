@@ -7,7 +7,7 @@ uri="http://java.sun.com/jsp/jstl/functions" %>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Projects - Bhupendra Sapkota</title>
+    <title>Portfolio - Projects</title>
     <link
       rel="stylesheet"
       href="${pageContext.request.contextPath}/css/base.css"
