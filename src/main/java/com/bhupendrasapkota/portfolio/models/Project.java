@@ -2,6 +2,8 @@ package com.bhupendrasapkota.portfolio.models;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.util.Date;
 import java.util.List;
 
 public class Project {
@@ -109,6 +111,14 @@ public class Project {
 
     public List<Skill> getTechnologies() { return technologies; }
     public void setTechnologies(List<Skill> technologies) { this.technologies = technologies; }
+
+    public Date getStartDateAsDate() {
+        return startDate == null ? null : Date.from(startDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
+    }
+
+    public Date getEndDateAsDate() {
+        return endDate == null ? null : Date.from(endDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
+    }
 
     @Override
     public String toString() {
