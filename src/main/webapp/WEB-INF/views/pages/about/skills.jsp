@@ -1,6 +1,6 @@
 <%-- /src/main/webapp/WEB-INF/views/pages/about/skills.jsp --%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<div class="skills-section-wrapper">
+<div class="skills-section-wrapper" id="skills">
   <div class="skills-grid">
     <div class="skills-summary">
       <div class="experience-highlight">

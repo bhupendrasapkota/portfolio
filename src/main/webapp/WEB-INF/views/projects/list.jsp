@@ -16,6 +16,11 @@ uri="http://java.sun.com/jsp/jstl/functions" %>
       rel="stylesheet"
       href="${pageContext.request.contextPath}/css/projects.css"
     />
+    <style>
+      .editorial-project-item {
+        cursor: pointer;
+      }
+    </style>
   </head>
   <body>
     <jsp:include page="/WEB-INF/views/common/navbar.jsp" />
@@ -51,7 +56,10 @@ uri="http://java.sun.com/jsp/jstl/functions" %>
       <!-- Projects Grid -->
       <div class="editorial-projects-grid">
         <c:forEach var="project" items="${projects}">
-          <div class="editorial-project-item">
+          <div
+            class="editorial-project-item"
+            data-href="${pageContext.request.contextPath}/projects/${project.slug}"
+          >
             <c:if test="${not empty project.featuredImageUrl}">
               <img
                 class="editorial-project-image"
@@ -99,11 +107,6 @@ uri="http://java.sun.com/jsp/jstl/functions" %>
                 ${project.shortDescription}
               </div>
               <div class="editorial-project-actions">
-                <a
-                  href="${pageContext.request.contextPath}/projects/${project.slug}"
-                  class="btn btn-outline editorial-view-link"
-                  >View Project <span class="btn-icon">&rarr;</span></a
-                >
                 <c:if test="${not empty project.projectUrl}">
                   <a
                     href="${project.projectUrl}"
@@ -135,5 +138,23 @@ uri="http://java.sun.com/jsp/jstl/functions" %>
       </div>
     </div>
     <jsp:include page="/WEB-INF/views/common/footer.jsp" />
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document
+          .querySelectorAll(".editorial-project-item")
+          .forEach(function (item) {
+            item.addEventListener("click", function (e) {
+              if (e.target.closest("a.btn")) {
+                return;
+              }
+              var href = item.getAttribute("data-href");
+              if (href) {
+                window.location.href = href;
+              }
+            });
+          });
+      });
+    </script>
   </body>
 </html>

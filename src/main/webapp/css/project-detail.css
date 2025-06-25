@@ -1,0 +1,167 @@
+/*
+  Project Detail Page Styles
+  Mirrors the clean, modern design of the blog page for consistency.
+  ========================================
+*/
+
+/* 1. Main Layout & Container
+---------------------------------------- */
+.project-detail-container {
+  max-width: var(--container-max-width, 1400px); /* Fallback for safety */
+  margin: 0 auto;
+  padding: var(--space-16) var(--space-8);
+  background: var(--bg-primary);
+}
+
+.project-section {
+  margin-top: var(--space-20);
+}
+
+/* 2. Header
+---------------------------------------- */
+.project-header {
+  text-align: center;
+  margin-bottom: var(--space-16);
+  padding-bottom: var(--space-12);
+  border-bottom: 2px solid var(--text-primary);
+}
+
+.project-title {
+  font-size: var(--text-6xl);
+  font-weight: var(--font-medium);
+  color: var(--text-primary);
+  margin-bottom: var(--space-4);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: var(--leading-tight);
+}
+
+.project-subtitle {
+  font-size: var(--text-xl);
+  color: var(--text-secondary);
+  font-weight: var(--font-normal);
+  max-width: var(--container-text-width, 60ch); /* Use character units */
+  margin: 0 auto;
+  line-height: var(--leading-relaxed);
+}
+
+/* 3. Common Section Styles
+---------------------------------------- */
+.project-section-heading {
+  font-size: var(--text-3xl);
+  font-weight: var(--font-bold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-12);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  position: relative;
+}
+
+.project-section-heading::after {
+  content: "";
+  position: absolute;
+  bottom: calc(-1 * var(--space-2));
+  left: 0;
+  width: var(--space-16);
+  height: 3px;
+  background: var(--text-primary);
+}
+
+.project-description p {
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
+}
+
+/* 4. Hero Image
+---------------------------------------- */
+.project-hero-image {
+  display: block;
+  width: 100%;
+  max-width: 1100px; /* Keeping specific max-width for design */
+  margin: 0 auto var(--space-3) auto; /* Replaced 12px */
+  object-fit: cover;
+  background: var(--bg-tertiary);
+}
+
+/* 5. Reusable Info Card
+---------------------------------------- */
+.project-info-card {
+  background: var(--bg-primary);
+  border: 2px solid var(--text-primary);
+  box-shadow: 0 2px 12px 0 var(--shadow-color, rgba(0, 0, 0, 0.06));
+  padding: var(--space-8) var(--space-10);
+  margin: 0 auto;
+  max-width: 1100px; /* Keeping specific max-width for design */
+  position: relative;
+  z-index: 2;
+  transition: all var(--transition-base, 0.18s);
+  margin-bottom: var(--space-8);
+}
+
+.project-info-card:hover {
+  transform: translateY(calc(-1 * var(--space-1)));
+  box-shadow: var(--space-2) var(--space-2) 0 var(--text-primary);
+  border-color: var(--text-primary);
+}
+
+.project-info-card:last-child {
+  margin-bottom: 0;
+}
+
+/* 6. Info Card Content
+---------------------------------------- */
+.project-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-10);
+  margin-top: var(--space-8);
+}
+
+.meta-section .meta-title {
+  font-size: var(--text-lg);
+  font-weight: var(--font-bold);
+  margin-bottom: var(--space-4);
+  color: var(--text-primary);
+  border-bottom: 2px solid var(--text-primary);
+  padding-bottom: var(--space-2);
+  display: inline-block;
+}
+
+.meta-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.meta-section li {
+  margin-bottom: var(--space-3);
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+}
+
+.meta-section li strong {
+  font-weight: var(--font-semibold);
+  color: var(--text-primary);
+  min-width: 8ch; /* Use character units */
+  display: inline-block;
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-2);
+}
+
+/* 7. Gallery & Testimonials
+---------------------------------------- */
+.testimonial-list,
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-8);
+}
+
+.testimonial-card {
+  padding: var(--space-6);
+}
+ 

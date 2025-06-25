@@ -1,7 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
-<div class="experience-section">
+<div class="experience-section" id="experience">
     <h2 class="experience-section-title">Work Experience</h2>
 
     <c:forEach var="exp" items="${workExperiences}" varStatus="loop">

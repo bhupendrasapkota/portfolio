@@ -35,13 +35,15 @@
           <li class="skill-item"><c:out value="${skill.name}" /></li>
         </c:forEach>
       </ul>
-      <a
-        href="${pageContext.request.contextPath}/skills"
-        class="btn btn-outline"
-        style="margin-top: 0.5rem"
-      >
-        More Skills <span class="btn-icon">&rarr;</span>
-      </a>
+      <div class="call-to-action">
+        <a
+          href="${pageContext.request.contextPath}/about#skills"
+          class="btn btn-outline"
+          style="margin-top: 0.5rem"
+        >
+          More Skills <span class="btn-icon">&rarr;</span>
+        </a>
+      </div>
     </section>
   </c:if>
 

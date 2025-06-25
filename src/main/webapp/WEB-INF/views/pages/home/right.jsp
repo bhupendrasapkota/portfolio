@@ -1,5 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> <%@ taglib
-prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %> <%@ taglib prefix="fn"
+uri="http://java.sun.com/jsp/jstl/functions" %>
 <div class="right-column-content">
   <!-- Projects Section -->
   <section class="projects-section">
@@ -62,12 +63,14 @@ prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
           </li>
         </c:forEach>
       </ul>
-      <a
-        href="${pageContext.request.contextPath}/experience"
-        class="btn btn-outline"
-      >
-        Experience <span class="btn-icon">&rarr;</span>
-      </a>
+      <c:if test="${not empty workExperiences and fn:length(workExperiences) > 0}">
+        <a
+          href="${pageContext.request.contextPath}/about#experience"
+          class="btn btn-outline"
+        >
+          Experience <span class="btn-icon">&rarr;</span>
+        </a>
+      </c:if>
     </section>
   </c:if>
 

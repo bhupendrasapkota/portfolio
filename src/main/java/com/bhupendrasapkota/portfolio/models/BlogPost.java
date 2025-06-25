@@ -79,6 +79,12 @@ public class BlogPost {
     public LocalDateTime getUpdatedAt() { return updatedAt; }
     public void setUpdatedAt(LocalDateTime updatedAt) { this.updatedAt = updatedAt; }
 
+    public String getFormattedPublishedAt() {
+        if (publishedAt == null) return "";
+        java.time.format.DateTimeFormatter formatter = java.time.format.DateTimeFormatter.ofPattern("MMM dd, yyyy");
+        return publishedAt.format(formatter);
+    }
+
     @Override
     public String toString() {
         return "BlogPost{" +
