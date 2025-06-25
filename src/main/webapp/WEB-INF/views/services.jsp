@@ -76,7 +76,7 @@ uri="http://java.sun.com/jsp/jstl/functions" %>
                 <img src="${service.iconName}" alt="${service.name}">
               </span>
               <div class="testimonial-content">
-                <div class="quote-mark">⚡</div>
+                <div class="quote-mark">🛠️</div>
                 <p class="testimonial-text">${service.description}</p>
                 <div class="testimonial-author">
                   <div class="author-info">
