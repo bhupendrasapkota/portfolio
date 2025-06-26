@@ -62,10 +62,8 @@ function observeFooterVisibility() {
       entries.forEach((entry) => {
         if (entry.isIntersecting && entry.intersectionRatio >= 0.95) {
           setColumnsScrollable(false);
-          console.log("Footer fully in view: columns disabled");
         } else {
           setColumnsScrollable(true);
-          console.log("Footer not fully in view: columns enabled");
         }
       });
     },
