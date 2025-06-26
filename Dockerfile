@@ -16,4 +16,4 @@ FROM tomcat:10.1-jdk17-temurin
 RUN rm -rf /usr/local/tomcat/webapps/ROOT
 
 # Copy WAR from the build stage
-COPY --from=build /app/target/portfolio.war /usr/local/tomcat/webapps/ROOT.war
+COPY --from=build /app/target/portfolio-1.0-SNAPSHOT.war /usr/local/tomcat/webapps/ROOT.war
